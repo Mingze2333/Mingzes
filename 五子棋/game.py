@@ -1,10 +1,9 @@
 from ai import AI
 
-class Game:  # 规则类
+class Game:  # 基础规则类
     def __init__(self):
         self.ai = AI()  # 初始化AI
-        self.map = [[0 for x in range(15)] for y in range(15)]  # 构建棋盘
-        self.turn = 1  # 最近一手是谁
+        self.map = [[0 for x in range(15)] for y in range(15)]  # 构建棋盘二维列表
 
     def move(self, pos):  # 玩家落子
         while True:
@@ -13,7 +12,6 @@ class Game:  # 规则类
                 if 0 <= x <= 14 and 0 <= y <= 14:  # 判断是否能落子
                     if self.map[x][y] == 0:
                         self.map[x][y] = 1  # 落子（玩家落子为1）
-                        self.turn = 1  # 玩家落子
                         return True
                 return False
             except ValueError:
@@ -22,8 +20,7 @@ class Game:  # 规则类
     def ai_move(self):  # 电脑落子
         move = AI.findBestChess(self.ai, self.map)
         x, y = move
-        self.map[x][y] = 1
-        self.turn = 1
+        self.map[x][y] = 2  # 落子（电脑落子为2）
         return move
 
     def result(self):  # 胜负判断
