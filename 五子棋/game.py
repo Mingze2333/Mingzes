@@ -20,7 +20,7 @@ class Game:  # 规则类
                 continue
 
     def ai_move(self):  # 电脑落子
-        move = AI.findBestChess(self.ai, self.map, self.turn)
+        move = AI.findBestChess(self.ai, self.map)
         x, y = move
         self.map[x][y] = 1
         self.turn = 1
