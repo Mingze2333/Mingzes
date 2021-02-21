@@ -3,4 +3,4 @@ class AI:
         pass
 
     def findBestChess(self, map):
-        pass
+        return (0, 0)
