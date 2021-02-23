@@ -42,22 +42,24 @@ class AI:
                 x += 4
                 y += 4
                 if map[x+m][y+n] == 2 and map[x+2*m][y+2*n] == 2 and map[x+3*m][y+3*n] == 2 and map[x+4*m][y+4*n] == 2:
-                    score[x-4][y-4] += 50000
+                    score[x-4][y-4] += 10000
+                elif map[x+m][y+n] == 1 and map[x+2*m][y+2*n] == 1 and map[x+3*m][y+3*n] == 1 and map[x+4*m][y+4*n] == 1:
+                    score[x-4][y-4] += 5000
                 elif map[x+m][y+n] == 1 and map[x+2*m][y+2*n] == 1 and map[x-m][y-n] == 1 and map[x-2*m][y-2*n] == 1:
-                    score[x-4][y-4] += 7000
-                elif map[x+m][y+n] == 1 and map[x+2*m][y+2*n] == 1 and map[x+3*m][y+3*n] == 1 and map[x+4*m][y+4*n] != 2:
-                    score[x-4][y-4] += 7000
+                    score[x-4][y-4] += 5000
                 elif map[x+m][y+n] == 1 and map[x+2*m][y+2*n] == 1 and map[x-m][y-n] == 1 and (map[x+3*m][y+3*n] == 0 or map[x-2*m][y-2*n] == 0):
-                    score[x-4][y-4] += 7000
+                    score[x-4][y-4] += 1000
+                elif map[x+m][y+n] == 1 and map[x+2*m][y+2*n] == 1 and map[x+3*m][y+3*n] == 1 and map[x+4*m][y+4*n] == 0:
+                    score[x-4][y-4] += 1000
                 elif map[x+m][y+n] == 2 and map[x+2*m][y+2*n] == 2 and map[x-m][y-n] == 2 and (map[x+3*m][y+3*n] == 0 or map[x-2*m][y-2*n] == 0):
-                    score[x-4][y-4] += 1000
+                    score[x-4][y-4] += 100
                 elif map[x+m][y+n] == 2 and map[x+2*m][y+2*n] == 2 and map[x+3*m][y+3*n] == 2 and map[x+4*m][y+4*n] == 0:
-                    score[x-4][y-4] += 1000
+                    score[x-4][y-4] += 100
                 elif map[x+m][y+n] == 2 and map[x+2*m][y+2*n] == 2 and map[x+3*m][y+3*n] == 0:
                     score[x-4][y-4] += 6
-                elif map[x+m][y+n] == 1 and map[x+2*m][y+2*n] == 1 and map[x+3*m][y+3*n] == 1 and (map[x+4*m][y+4*n] == 2 or map[x+4*m][y+4*n] == 3):
-                    score[x-4][y-4] += 5
                 elif map[x+m][y+n] == 2 and map[x+2*m][y+2*n] == 2 and map[x+3*m][y+3*n] == 0:
+                    score[x-4][y-4] += 5
+                elif map[x+m][y+n] == 1 and map[x+2*m][y+2*n] == 1 and map[x+3*m][y+3*n] == 1 and (map[x+4*m][y+4*n] == 2 or map[x+4*m][y+4*n] == 3):
                     score[x-4][y-4] += 4
                 elif map[x+m][y+n] == 2 and map[x+2*m][y+2*n] == 2 and map[x+3*m][y+3*n] == 2 and (map[x+4*m][y+4*n] == 1 or map[x+4*m][y+4*n] == 3):
                     score[x-4][y-4] += 4
@@ -78,5 +80,6 @@ class AI:
             final_score.append((score[x][y], (x, y)))
 
         # 获取最高分
-        best_move = max(final_score)
+        final_score.sort(reverse=True)
+        best_move = final_score[0]
         return best_move
