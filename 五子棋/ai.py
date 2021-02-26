@@ -78,70 +78,70 @@ class AI:  # AI类
                     typecut = type[k:(k+4)]
                     if typecut == self.C_FOUR:
                         score[x-4][y-4] += 1000
-                        print('电脑连四，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑连四，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_FOUR:
-                        score[x-4][y-4] += 100
-                        print('玩家连四，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        score[x-4][y-4] += 500
+                        print('玩家连四，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_L_THREE_L and k <= 3:
                         score[x-4][y-4] += 100
-                        print('玩家活三L，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家活三L，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_L_THREE_R and k >= 4:
                         score[x-4][y-4] += 100
-                        print('玩家活三R，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家活三R，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_L_THREE_L and k <= 3:
                         score[x-4][y-4] += 50
-                        print('电脑活三L，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑活三L，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_L_THREE_R and k >= 4:
                         score[x-4][y-4] += 50
-                        print('电脑活三R，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑活三R，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_S_THREE_L_1:
                         score[x-4][y-4] += 4
-                        print('玩家眠三L1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家眠三L1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_S_THREE_L_W_1:
                         score[x-4][y-4] += 4
-                        print('玩家眠三LW1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家眠三LW1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_S_THREE_R_1:
                         score[x-4][y-4] += 4
-                        print('玩家眠三R1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家眠三R1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_S_THREE_R_W_1:
                         score[x-4][y-4] += 4
-                        print('玩家眠三RW1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家眠三RW1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_S_THREE_2:
                         score[x-4][y-4] += 4
-                        print('玩家眠三2，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家眠三2，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_S_THREE_3:
                         score[x-4][y-4] += 4
-                        print('玩家眠三3，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家眠三3，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_S_THREE_L_1:
                         score[x-4][y-4] += 10
-                        print('电脑眠三L1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑眠三L1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_S_THREE_L_W_1:
                         score[x-4][y-4] += 10
-                        print('电脑眠三LW1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑眠三LW1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_S_THREE_R_1:
                         score[x-4][y-4] += 10
-                        print('电脑眠三R1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑眠三R1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_S_THREE_R_W_1:
                         score[x-4][y-4] += 10
-                        print('电脑眠三RW1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑眠三RW1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_S_THREE_2:
                         score[x-4][y-4] += 10
-                        print('电脑眠三2，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑眠三2，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_S_THREE_3:
                         score[x-4][y-4] += 10
-                        print('电脑眠三3，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑眠三3，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_L_TWO_1:
                         score[x-4][y-4] += 6
-                        print('玩家活二1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家活二1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.P_L_TWO_2:
                         score[x-4][y-4] += 6
-                        print('玩家活二2，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('玩家活二2，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_L_TWO_1:
                         score[x-4][y-4] += 10
-                        print('电脑活二1，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑活二1，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
                     if typecut == self.C_L_TWO_2:
                         score[x-4][y-4] += 10
-                        print('电脑活二2，坐标：%d, %d，j=%d,k=%d' % (x-4, y-4, j, k))
+                        print('电脑活二2，坐标：%d, %d，方向：%d,起始点：%d' % (x-4, y-4, j, k))
 
         # 记录最终得分
         for j in range(len(self.empty_point)):
